@@ -1,0 +1,22 @@
+.movieReviewsList {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.movieReviewsListItem {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.authorName {
+  font-size: 24px;
+  font-weight: 500;
+  color: black;
+}
+
+.reviewContent {
+  font-size: 18px;
+  font-weight: 400;
+}

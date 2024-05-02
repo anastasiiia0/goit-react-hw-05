@@ -1,0 +1,14 @@
+.trendFilmsList {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.trendFilmsListItem {
+  font-size: 18px;
+  color: rgb(63, 14, 222);
+}
+
+.isActive {
+  color: rgb(234, 62, 91);
+}

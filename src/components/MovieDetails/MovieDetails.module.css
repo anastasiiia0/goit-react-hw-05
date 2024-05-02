@@ -1,0 +1,89 @@
+.movieCard {
+  display: flex;
+  gap: 20px;
+  position: relative;
+  margin-bottom: 100px;
+}
+
+.movieCard::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: rgb(129, 129, 129);
+  position: absolute;
+  bottom: -50px;
+}
+
+.movieImg {
+  width: 300px;
+}
+
+.movieInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.movieName {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.movieRating {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.movieHeaderText {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.movieOverview {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.genresList {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.genresListItem {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.additionalInfo {
+  position: relative;
+  margin-bottom: 100px;
+}
+
+.additionalInfo::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: rgb(129, 129, 129);
+  position: absolute;
+  bottom: -50px;
+}
+
+.additionalInfoList {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.additionalInfoLink {
+  font-size: 18px;
+  font-weight: 500;
+  color: blue;
+}
+
+.isActive {
+  color: rgb(251, 0, 0);
+}

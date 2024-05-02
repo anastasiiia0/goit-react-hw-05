@@ -1,0 +1,27 @@
+.movieCastList {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.movieCastListItem {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.actorInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.actorInfoTitle {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.actorPhoto {
+  width: 200px;
+  object-fit: cover;
+}
