@@ -6,6 +6,7 @@
   padding: 15px 45px;
   display: flex;
   gap: 30px;
+  margin-bottom: 20px;
 }
 
 .navLink {
@@ -16,5 +17,5 @@
 }
 
 .isActive {
-  color: rgb(234, 62, 91);
+  color: #ea3e5b;
 }

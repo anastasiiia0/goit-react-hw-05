@@ -1,3 +1,9 @@
 .moviePage {
   padding: 20px;
 }
+
+.infoMessage {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 500;
+}

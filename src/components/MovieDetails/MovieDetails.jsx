@@ -1,4 +1,5 @@
 import { NavLink, Outlet } from 'react-router-dom';
+import { Suspense } from 'react';
 import css from './MovieDetails.module.css';
 import clsx from 'clsx';
 
@@ -42,7 +43,9 @@ export default function MovieDetails({
           </li>
         </ul>
       </div>
-      <Outlet />
+      <Suspense fallback={<p className={css.infoMessage}>Loading...</p>}>
+        <Outlet />
+      </Suspense>
     </div>
   );
 }

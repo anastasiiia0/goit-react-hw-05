@@ -25,3 +25,9 @@
   width: 200px;
   object-fit: cover;
 }
+
+.infoMessage {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 500;
+}

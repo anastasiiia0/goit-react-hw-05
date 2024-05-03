@@ -7,6 +7,9 @@ import { useState, useEffect, useRef } from 'react';
 
 export default function MovieDetailsPage() {
   const [movieDetails, setMovieDetails] = useState(null);
+  const [loader, setLoader] = useState(false);
+  const [error, setError] = useState(false);
+
   const location = useLocation();
   const backLinkHref = useRef(location.state ?? '/movies');
 
@@ -15,11 +18,15 @@ export default function MovieDetailsPage() {
   useEffect(() => {
     async function showMovieDetails() {
       try {
+        setLoader(true);
+        setError(false);
+
         const data = await fetchMovieDetails(movieId);
-        // console.log(data);
         setMovieDetails(data);
       } catch (error) {
-        // console.log(error);
+        setError(true);
+      } finally {
+        setLoader(false);
       }
     }
 
@@ -27,9 +34,14 @@ export default function MovieDetailsPage() {
   }, [movieId]);
 
   return (
-    <div className={css.moviePage}>
-      <GoBackLink pathBackTo={backLinkHref.current} />
-      {movieDetails && <MovieDetails movieDetails={movieDetails} />}
-    </div>
+    <>
+      <div className={css.moviePage}>
+        <GoBackLink pathBackTo={backLinkHref.current} />
+        {movieDetails && <MovieDetails movieDetails={movieDetails} />}
+      </div>
+
+      {loader && <p className={css.infoMessage}>Loading...</p>}
+      {error && <p className={css.infoMessage}>Oops, something went wrong</p>}
+    </>
   );
 }

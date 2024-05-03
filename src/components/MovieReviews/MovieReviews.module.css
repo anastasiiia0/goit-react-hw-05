@@ -20,3 +20,9 @@
   font-size: 18px;
   font-weight: 400;
 }
+
+.infoMessage {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 500;
+}
