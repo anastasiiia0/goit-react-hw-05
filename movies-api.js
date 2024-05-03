@@ -1,4 +1,5 @@
 import axios from 'axios';
+import notFoundImg from '/src/img/img-not-found.jpg';
 
 const baseImgURL = 'https://image.tmdb.org/t/p/';
 
@@ -42,7 +43,7 @@ export const fetchMovieCast = async id => {
     ...actor,
     profile_path: actor.profile_path
       ? `${baseImgURL}w200${actor.profile_path}`
-      : '/src/img/img-not-found.jpg',
+      : notFoundImg,
   }));
 
   return responseWithConfig;
