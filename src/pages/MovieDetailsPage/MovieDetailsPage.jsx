@@ -3,12 +3,12 @@ import MovieDetails from '../../components/MovieDetails/MovieDetails';
 import GoBackLink from '../../components/GoBackLink/GoBackLink';
 import { fetchMovieDetails } from '../../../movies-api';
 import { useParams, useLocation } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export default function MovieDetailsPage() {
   const [movieDetails, setMovieDetails] = useState(null);
   const location = useLocation();
-  const backLinkHref = location.state ?? '/movies';
+  const backLinkHref = useRef(location.state ?? '/movies');
 
   const { movieId } = useParams();
 
@@ -28,10 +28,8 @@ export default function MovieDetailsPage() {
 
   return (
     <div className={css.moviePage}>
-      <GoBackLink pathBackTo={backLinkHref} />
-      {movieDetails && (
-        <MovieDetails movieDetails={movieDetails} state={location} />
-      )}
+      <GoBackLink pathBackTo={backLinkHref.current} />
+      {movieDetails && <MovieDetails movieDetails={movieDetails} />}
     </div>
   );
 }
