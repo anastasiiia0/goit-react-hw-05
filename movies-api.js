@@ -1,5 +1,6 @@
 import axios from 'axios';
-import notFoundImg from '/src/img/img-not-found.jpg';
+import notFoundProfileImg from '/src/img/img-not-found.jpg';
+import notFoundMovieImg from '/src/img/movie-img-not-found.jpg';
 
 const baseImgURL = 'https://image.tmdb.org/t/p/';
 
@@ -26,7 +27,9 @@ export const fetchMovieDetails = async id => {
   const responseWithConfig = {
     data: {
       ...response.data,
-      poster_path: `${baseImgURL}w500${response.data.poster_path}`,
+      poster_path: response.data.poster_path
+        ? `${baseImgURL}w500${response.data.poster_path}`
+        : notFoundMovieImg,
       vote_average: response.data.vote_average.toFixed(1),
     },
   };
@@ -43,7 +46,7 @@ export const fetchMovieCast = async id => {
     ...actor,
     profile_path: actor.profile_path
       ? `${baseImgURL}w200${actor.profile_path}`
-      : notFoundImg,
+      : notFoundProfileImg,
   }));
 
   return responseWithConfig;
